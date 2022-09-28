@@ -10,7 +10,7 @@ localStorage.setItem(
 );
 // localStorage.setItem(
 //   "tokenKeyEncrypted",
-//   EncryptStringAES("3e806d80c568686174a6520843cb0c11")
+//   EncryptStringAES("api key is another doc") //! gercek api atip encrypt edildi.
 // );
 form.addEventListener("submit", (e) => {
   e.preventDefault();
