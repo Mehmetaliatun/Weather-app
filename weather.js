@@ -73,13 +73,27 @@ const getWeatherAppDataFromApi = async () => {
     list.append(createdLi);
 
     //*Capturing
-    createdLi.addEventListener("click", (e) => {
-      if ((e.target.tagName = "IMG")) {
-        e.target.src = e.target.src == iconUrl ? iconUrlAWS : iconUrl;
-      }
-    });
+    // createdLi.addEventListener("click", (e) => {
+    //   if ((e.target.tagName = "IMG")) {
+    //     e.target.src = e.target.src == iconUrl ? iconUrlAWS : iconUrl;
+    //   }
+    // });
 
-    //*Bubling
+    //*Bubbling
+    // createdLi.addEventListener("click", (e) => {
+    //   alert(`${e.target.tagName} element is clicked!`);
+    //   window.location.href = "https://www.linkedin.com/in/maatun/";
+    // });
+    // createdLi.querySelector("figure").addEventListener("click", (e) => {
+    //   alert(`${e.target.tagName} element is clicked!`);
+    //   //*stop bubbling
+    //   //*e.stopPropagation();
+    //   //   window.location.href = "https://www.linkedin.com/in/maatun/";
+    // });
+    // createdLi.querySelector("img").addEventListener("click", (e) => {
+    //   alert(`${e.target.tagName} element is clicked!`);
+    //   //   window.location.href = "https://www.linkedin.com/in/maatun/";
+    // });
 
     form.reset();
   } catch (error) {
@@ -91,3 +105,9 @@ const getWeatherAppDataFromApi = async () => {
   }
   form.reset();
 };
+//*window onload
+document.querySelector(".cities").addEventListener("click", (e) => {
+  if (e.target.tagName == "IMG") {
+    alert("img is clicked");
+  }
+});
