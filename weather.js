@@ -28,10 +28,12 @@ const getWeatherAppDataFromApi = async () => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${tokenKey}&units=${units}&lang=${lang}`;
 
   try {
-    const response = await fetch(url).then((response) => response.json());
+    // const response = await fetch(url).then((response) => response.json());
+    // console.log(response);
+    const response = await axios(url);
     console.log(response);
-
-    const { main, sys, weather, name } = response;
+    //*obj destr.
+    const { main, sys, weather, name } = response.data;
 
     const iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
     const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
@@ -53,7 +55,7 @@ const getWeatherAppDataFromApi = async () => {
         return;
       }
     }
-    console.log(cityNameSpans);
+    // console.log(cityNameSpans);
     const createdLi = document.createElement("li");
     createdLi.classList.add("city");
     createdLi.innerHTML = `<h2 class="city-name" data-name="${name}, ${
